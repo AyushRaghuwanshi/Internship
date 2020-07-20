@@ -51,7 +51,7 @@ void byte_array_to_unsigned_txn(uint8_t *btc_unsigned_txn_byte_array, unsigned_t
     uint32_t offset = 4 + 1;
     for(uint8_t i = 0; i < unsigned_txn_ptr->input_count; i++){
         memcpy((void*)&unsigned_txn_ptr->input[i], btc_unsigned_txn_byte_array + offset, 32 + 4 + 1 + 25 + 4);
-        offset += 32 + 4 + 1 + 25;
+        offset += 32 + 4 + 1 + 25 + 4;
     }
 
     memcpy((void*)&unsigned_txn_ptr->output_count, btc_unsigned_txn_byte_array + offset, 1);
